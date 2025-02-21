@@ -35,6 +35,11 @@ public class BallLauncher extends GraphicsProgram implements ActionListener{
 		}
 	}
 	public void mousePressed(MouseEvent e) {
+		for (GOval ball: balls) {
+			if (ball.getX() < 100) {
+				return;
+			}
+		}
 		GOval ball = makeBall(SIZE/2, e.getY());
 		balls.add(ball);
 		add(ball);
